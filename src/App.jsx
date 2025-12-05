@@ -11,6 +11,22 @@ import {
   BarChart3,
   Mail,
   ArrowUpRight,
+  BrainCircuit,
+  CalendarDays,
+  Users,
+  Rocket,
+  BarChart3,
+  Mail,
+  ArrowUpRight,
+  Facebook,
+  Instagram,
+  Linkedin,
+  LayoutGrid,
+  Smartphone,
+  Palette,
+  Video,
+  Share2,
+  Bot,
 } from "lucide-react";
 
 import genesisLogo from "./assets/genesis-logo.png";
@@ -52,17 +68,15 @@ export default function App() {
   ];
 
   const tools = [
-    "Meta Business Suite",
-    "Instagram",
-    "Facebook",
-    "LinkedIn",
-    "TikTok",
-    "Canva",
-    "CapCut",
-    "Buffer/Hootsuite",
-    "Mailchimp",
-    "Google Analytics",
-    "ChatGPT",
+    { name: "Meta Business Suite", icon: <LayoutGrid size={32} /> },
+    { name: "Instagram", icon: <Instagram size={32} /> },
+    { name: "Facebook", icon: <Facebook size={32} /> },
+    { name: "LinkedIn", icon: <Linkedin size={32} /> },
+    { name: "TikTok", icon: <Smartphone size={32} /> },
+    { name: "Canva", icon: <Palette size={32} /> },
+    { name: "CapCut", icon: <Video size={32} /> },
+    { name: "Buffer/Hootsuite", icon: <Share2 size={32} /> },
+    { name: "ChatGPT", icon: <Bot size={32} /> },
   ];
 
   const caseStudies = [
@@ -232,9 +246,12 @@ export default function App() {
       {/* Tools */}
       <section id="tools" className="section">
         <h2>Tools I Use</h2>
-        <div className="chips">
+        <div className="tools-grid">
           {tools.map((t) => (
-            <span key={t} className="chip">{t}</span>
+            <div key={t.name} className="tool-card">
+              <div className="tool-icon">{t.icon}</div>
+              <span className="tool-name">{t.name}</span>
+            </div>
           ))}
         </div>
       </section>
